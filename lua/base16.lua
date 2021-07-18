@@ -104,15 +104,15 @@ local function apply_base16_theme(theme, use_256_colorspace)
 	highlight("Bold",          nil, nil, nil, nil, "bold", nil)
 	highlight("Debug",         theme.base08, nil, cterm08, nil, nil, nil)
 	highlight("Directory",     theme.base0D, nil, cterm0D, nil, nil, nil)
-	highlight("Error",         theme.base00, theme.base08, cterm00, cterm08, nil, nil)
+	highlight("Error",         theme.base00, theme.base08, cterm00, cterm08, "bold", nil)
 	highlight("ErrorMsg",      theme.base08, theme.base00, cterm08, cterm00, nil, nil)
 	highlight("Exception",     theme.base08, nil, cterm08, nil, nil, nil)
 	highlight("FoldColumn",    theme.base0C, theme.base01, cterm0C, cterm01, nil, nil)
 	highlight("Folded",        theme.base03, theme.base01, cterm03, cterm01, nil, nil)
 	highlight("IncSearch",     theme.base01, theme.base09, cterm01, cterm09, "none", nil)
-	highlight("Italic",        nil, nil, nil, nil, "none", nil)
+	highlight("Italic",        nil, nil, nil, nil, "italic", nil)
 	highlight("Macro",         theme.base08, nil, cterm08, nil, nil, nil)
-	highlight("MatchParen",    nil, theme.base03, nil, cterm03,  nil, nil)
+	highlight("MatchParen",    nil, theme.base03, nil, cterm03,  "bold", nil)
 	highlight("ModeMsg",       theme.base0B, nil, cterm0B, nil, nil, nil)
 	highlight("MoreMsg",       theme.base0B, nil, cterm0B, nil, nil, nil)
 	highlight("Question",      theme.base0D, nil, cterm0D, nil, nil, nil)
@@ -131,7 +131,7 @@ local function apply_base16_theme(theme, use_256_colorspace)
 	highlight("NonText",       theme.base03, nil, cterm03, nil, nil, nil)
 	highlight("LineNr",        theme.base03, "NONE", cterm03, "NONE", nil, nil)
 	highlight("SignColumn",    theme.base03, "NONE", cterm03, "NONE", nil, nil)
-	highlight("StatusLine",    theme.base04, theme.base02, cterm04, cterm02, "none", nil)
+	highlight("StatusLine",    theme.base04, theme.base01, cterm04, cterm01, "none", nil)
 	highlight("StatusLineNC",  theme.base03, "NONE", cterm03, "NONE", "none", nil)
 	highlight("VertSplit",     theme.base02, "NONE", cterm02, "NONE", "none", nil)
 	highlight("ColorColumn",   nil, theme.base01, nil, cterm01, "none", nil)
@@ -140,10 +140,21 @@ local function apply_base16_theme(theme, use_256_colorspace)
 	highlight("CursorLineNr",  theme.base04, "NONE", cterm04, "NONE", nil, nil)
 	highlight("QuickFixLine",  nil, theme.base01, nil, cterm01, "none", nil)
 	highlight("PMenu",         theme.base05, theme.base01, cterm05, cterm01, "none", nil)
-	highlight("PMenuSel",      theme.base01, theme.base05, cterm01, cterm05, nil, nil)
+	highlight("PMenuSbar",     nil, theme.base02, nil, cterm02, nil, nil)
+	highlight("PMenuThumb",    nil, theme.base03, nil, cterm03, nil, nil)
+	highlight("PMenuSel",      theme.base01, theme.base0B, cterm01, cterm05, nil, nil)
 	highlight("TabLine",       theme.base03, theme.base01, cterm03, cterm01, "none", nil)
 	highlight("TabLineFill",   theme.base03, theme.base01, cterm03, cterm01, "none", nil)
 	highlight("TabLineSel",    theme.base0B, theme.base01, cterm0B, cterm01, "none", nil)
+	highlight("NvimInternalError", theme.base08, nil, cterm08, nil, "none", nil)
+	highlight("IndentBlanklineChar", theme.base02, nil, cterm00, nil, nil, nil)
+
+	-- Packer
+	highlight("NormalFloat",   nil, theme.base01, nil, cterm01, nil, nil)
+	highlight("FloatBorder",   theme.base01, theme.base01, cterm01, cterm01, nil, nil)
+
+	-- NvimTree
+	highlight("NvimTreeIndentMarker", theme.base02, nil, cterm00, nil, nil, nil)
 
 	-- Standard syntax highlighting
 	highlight("Boolean",      theme.base09, nil, cterm09, nil, nil, nil)
@@ -197,10 +208,10 @@ local function apply_base16_theme(theme, use_256_colorspace)
 	highlight("cssColor",       theme.base0C, nil, cterm0C, nil, nil, nil)
 
 	-- Diff highlighting
-	highlight("DiffAdd",      theme.base0B, theme.base00,  cterm0B, cterm01, nil, nil)
-	highlight("DiffChange",   theme.base03, theme.base00,  cterm03, cterm01, nil, nil)
-	highlight("DiffDelete",   theme.base08, theme.base00,  cterm08, cterm01, nil, nil)
-	highlight("DiffText",     theme.base0D, theme.base00,  cterm0D, cterm01, nil, nil)
+	highlight("DiffAdd",      theme.base0B, theme.base00,  cterm0B, cterm00, nil, nil)
+	highlight("DiffChange",   theme.base0A, theme.base00,  cterm03, cterm00, nil, nil)
+	highlight("DiffDelete",   theme.base08, theme.base00,  cterm08, cterm00, nil, nil)
+	highlight("DiffText",     theme.base0D, theme.base00,  cterm0D, cterm00, nil, nil)
 	highlight("DiffAdded",    theme.base0B, theme.base00,  cterm0B, cterm00, nil, nil)
 	highlight("DiffFile",     theme.base08, theme.base00,  cterm08, cterm00, nil, nil)
 	highlight("DiffNewFile",  theme.base0B, theme.base00,  cterm0B, cterm00, nil, nil)
@@ -240,6 +251,7 @@ local function apply_base16_theme(theme, use_256_colorspace)
 	highlight("javaScript",        theme.base05, nil, cterm05, nil, nil, nil)
 	highlight("javaScriptBraces",  theme.base05, nil, cterm05, nil, nil, nil)
 	highlight("javaScriptNumber",  theme.base09, nil, cterm09, nil, nil, nil)
+
 	-- pangloss/vim-javascript highlighting
 	highlight("jsOperator",          theme.base0D, nil, cterm0D, nil, nil, nil)
 	highlight("jsStatement",         theme.base0E, nil, cterm0E, nil, nil, nil)
@@ -330,7 +342,7 @@ local function apply_base16_theme(theme, use_256_colorspace)
 	-- Java highlighting
 	highlight("javaOperator",     theme.base0D, nil, cterm0D, nil, nil, nil)
 
-  -- LspDiagnostic base highlight group
+  	-- LspDiagnostic base highlight group
 	highlight("LspDiagnosticsDefaultError",       theme.base08, nil, cterm00, cterm08, nil, nil)
 	highlight("LspDiagnosticsDefaultWarning",     theme.base0A, nil, cterm08, cterm00, nil, nil)
 	highlight("LspDiagnosticsDefaultInformation", theme.base0D, nil, cterm08, cterm00, nil, nil)
@@ -937,10 +949,10 @@ themes["one-light"] = {
 	base0C = "0184bc"; base0D = "4078f2"; base0E = "a626a4"; base0F = "986801";
 }
 themes["onedark"] = {
-	base00 = "1e2127"; base01 = "2f343f"; base02 = "2c313a"; base03 = "545862";
+	base00 = "1e2127"; base01 = "2f343f"; base02 = "3e4451"; base03 = "525766";
 	base04 = "929ba4"; base05 = "abb2bf"; base06 = "b6bdca"; base07 = "c8ccd4";
 	base08 = "e06c75"; base09 = "d19a66"; base0A = "e5c07b"; base0B = "98c379";
-	base0C = "56b6c2"; base0D = "61afef"; base0E = "c678dd"; base0F = "be5046";
+	base0C = "56b6c2"; base0D = "61afef"; base0E = "c678dd"; base0F = "d47d85";
 }
 themes["outrun-dark"] = {
 	base00 = "00002A"; base01 = "20204A"; base02 = "30305A"; base03 = "50507A";
