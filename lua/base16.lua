@@ -66,6 +66,10 @@ local function apply_base16_theme(theme, use_256_colorspace)
 		nvim.g.terminal_color_13 = "#"..theme.base0E
 		nvim.g.terminal_color_14 = "#"..theme.base0C
 		nvim.g.terminal_color_15 = "#"..theme.base07
+		nvim.g.terminal_color_16 = "#"..theme.base01
+		nvim.g.terminal_color_17 = "#"..theme.base02
+		nvim.g.terminal_color_18 = "#"..theme.base04
+		nvim.g.terminal_color_19 = "#"..theme.base06
 		if nvim.o.background == "light" then
 			nvim.g.terminal_color_background = "#"..theme.base05
 			nvim.g.terminal_color_foreground = "#"..theme.base0B
@@ -132,8 +136,8 @@ local function apply_base16_theme(theme, use_256_colorspace)
 	highlight("LineNr",        theme.base03, "NONE", cterm03, "NONE", nil, nil)
 	highlight("SignColumn",    theme.base03, "NONE", cterm03, "NONE", nil, nil)
 	highlight("StatusLine",    theme.base04, theme.base01, cterm04, cterm01, "none", nil)
-	highlight("StatusLineNC",  theme.base03, "NONE", cterm03, "NONE", "none", nil)
-	highlight("VertSplit",     theme.base02, "NONE", cterm02, "NONE", "none", nil)
+	highlight("StatusLineNC",  theme.base01, "NONE", cterm01, "NONE", "underline", nil)
+	highlight("VertSplit",     theme.base01, "NONE", cterm01, "NONE", "none", nil)
 	highlight("ColorColumn",   nil, theme.base01, nil, cterm01, "none", nil)
 	highlight("CursorColumn",  nil, theme.base01, nil, cterm01, "none", nil)
 	highlight("CursorLine",    nil, theme.base01, nil, cterm01, "none", nil)
@@ -329,7 +333,7 @@ local function apply_base16_theme(theme, use_256_colorspace)
 
 	-- Startify highlighting
 	highlight("StartifyBracket",  theme.base03, nil, cterm03, nil, nil, nil)
-	highlight("StartifyFile",     theme.base07, nil, cterm07, nil, nil, nil)
+	highlight("StartifyFile",     theme.base05, nil, cterm07, nil, nil, nil)
 	highlight("StartifyFooter",   theme.base03, nil, cterm03, nil, nil, nil)
 	highlight("StartifyHeader",   theme.base0B, nil, cterm0B, nil, nil, nil)
 	highlight("StartifyNumber",   theme.base09, nil, cterm09, nil, nil, nil)
@@ -949,8 +953,8 @@ themes["one-light"] = {
 	base0C = "0184bc"; base0D = "4078f2"; base0E = "a626a4"; base0F = "986801";
 }
 themes["onedark"] = {
-	base00 = "1e2127"; base01 = "2f343f"; base02 = "3e4451"; base03 = "525766";
-	base04 = "929ba4"; base05 = "abb2bf"; base06 = "b6bdca"; base07 = "c8ccd4";
+	base00 = "1e2127"; base01 = "282c34"; base02 = "3e4451"; base03 = "525766";
+	base04 = "929ba4"; base05 = "abb2bf"; base06 = "22262e"; base07 = "2d3139";
 	base08 = "e06c75"; base09 = "d19a66"; base0A = "e5c07b"; base0B = "98c379";
 	base0C = "56b6c2"; base0D = "61afef"; base0E = "c678dd"; base0F = "d47d85";
 }
